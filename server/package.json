@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Sichelle/server-sichelle/issues"
   },
-  "homepage": "https://github.com/Sichelle/server-sichelle#readme"
+  "homepage": "https://github.com/Sichelle/server-sichelle#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
