@@ -8,12 +8,16 @@ const alumni5 = require ('../mocks/alumnis/alumni5.json')
 
 const alumnis = [ alumni1 , alumni2 , alumni3, alumni4, alumni5 ]
 
-console.log(alumnis)
-
 const app = express()
 
 app.get('/', (request,response) => {
 	response.send('ok')
 })
+
+
+app.get('/alumnis', (request,response) => {
+	response.json(alumnis)
+})
+
 
 app.listen(3247, () => console.log("j'écoute"))
