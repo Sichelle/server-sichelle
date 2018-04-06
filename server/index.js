@@ -10,6 +10,12 @@ const alumnis = [ alumni1 , alumni2 , alumni3, alumni4, alumni5 ]
 
 const app = express()
 
+app.use((request,response) => {
+	res.header("Acces-Control-Allow-Origin", "*")
+	res.header("Acces-Control-Allow-Headers", "Origin, X-Requested-With,Content-Type, Accept")
+	next()
+})
+
 app.get('/', (request,response) => {
 	response.send('ok')
 })
@@ -20,4 +26,4 @@ app.get('/alumnis', (request,response) => {
 })
 
 
-app.listen(3247, () => console.log("j'écoute"))
+app.listen(3247, () => console.log("j'écoute 3247"))
