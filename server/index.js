@@ -10,14 +10,14 @@ const alumnis = [ alumni1 , alumni2 , alumni3, alumni4, alumni5 ]
 
 const app = express()
 
-app.use((request,response) => {
-	res.header("Acces-Control-Allow-Origin", "*")
-	res.header("Acces-Control-Allow-Headers", "Origin, X-Requested-With,Content-Type, Accept")
+app.use((request,response, next) => {
+	response.header("Acces-Control-Allow-Origin", "*")
+	response.header("Acces-Control-Allow-Headers", "Origin, X-Requested-With,Content-Type, Accept")
 	next()
 })
 
 app.get('/', (request,response) => {
-	response.send('ok')
+	response.send('OK')
 })
 
 
