@@ -1,10 +1,13 @@
+import { createNewAlumni } from './components/alumni.js'
+
 fetch('http://localhost:3247/alumnis')
-	.then(response => response.json())
-	.then(alumnis => {
+  .then(response => response.json())
+  .then(alumnis => {
 
-	const alumnisElement = document.getElementById('alumnis')
-		alumniElements.innerHTML = JSON.stringify(alumnis)
+    const alumnisElement = document.getElementById('alumnis')
 
-		console.log(alumniElements)
-		
-	})
+    const alumniElements = alumnis.map(createNewAlumni).join('')
+    console.log(alumniElements)
+
+    alumnisElement.innerHTML = alumniElements
+  })
